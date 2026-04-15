@@ -11,7 +11,7 @@ namespace ProyectoFinal_C_3
 {
 
 
-    public partial class Site1
+    public partial class MiMaster
     {
 
         /// <summary>

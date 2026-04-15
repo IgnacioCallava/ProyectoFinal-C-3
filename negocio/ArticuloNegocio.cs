@@ -7,7 +7,7 @@ using dominio;
 
 namespace negocio
 {
-    internal class ArticuloNegocio
+    public class ArticuloNegocio
     {
 
         public List<Articulo> listarConSp()
@@ -17,7 +17,7 @@ namespace negocio
 
             try
             {
-                datos.setearProcedimiento("ArticulosListar");
+                datos.setearProcedimiento("ListarArticulos");
                 datos.ejecutarLectura();
 
                 while (datos.Lector.Read())
@@ -77,7 +77,6 @@ namespace negocio
             }
         }
 
-
         public void agregarConSp(Articulo nuevo)
         {
             AccesoDatos datos = new AccesoDatos();
@@ -113,7 +112,7 @@ namespace negocio
 
             try
             {
-                string consulta = "SELECT A.Codigo, A.Nombre, A.Descripcion, M.Id as IdMarca, M.Descripcion as Marca, C.Id as IdCategoria, C.Descripcion as Categoria, A.ImagenUrl, A.precio, A.Activo FROM ARTICULOS A, CATEGORIAS C, MARCAS M WHERE A.IdMarca = M.Id and A.IdCategoria = C.Id And ";
+                string consulta = "SELECT A.Codigo, A.Nombre, A.Descripcion, M.Id as IdMarca, M.Descripcion as Marca, C.Id as IdCategoria, C.Descripcion as Categoria, A.ImagenUrl, A.precio FROM ARTICULOS A, CATEGORIAS C, MARCAS M WHERE A.IdMarca = M.Id and A.IdCategoria = C.Id And ";
                 switch (campo)
                 {
                     case "Nombre":
@@ -185,10 +184,7 @@ namespace negocio
                         break;
                 }
 
-                if (estado == "Activo")
-                    consulta += " and A.Activo = 1";
-                else if (estado == "Inactivo")
-                    consulta += " and A.Activo = 0";
+                
 
 
                 datos.setearConsulta(consulta);

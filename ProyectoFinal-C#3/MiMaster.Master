@@ -1,19 +1,98 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MiMaster.Master.cs" Inherits="ProyectoFinal_C_3.Site1" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MiMaster.Master.cs" Inherits="ProyectoFinal_C_3.MiMaster" %>
 
 <!DOCTYPE html>
 
 <html>
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous">
+    <link href="/content/style.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
+            <nav class="navbar navbar-expand-lg sticky-top bg-secondary" data-bs-theme="dark">
+                <div class="container-fluid">
+
+                    <a class="navbar-brand" href="#">
+                        <img class="logo" src="/assets/img/LogoStockFlow.png" alt="LogoEmpresa" />
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+
+                        <div class="navbar-nav mx-auto">
+                            <a class="nav-link" href="Default.aspx">Home</a>
+                            <a class="nav-link" href="AccionesArticulos.aspx">Inventario</a>
+                            <a class="nav-link" href="MiPerfil.aspx">Mi Perfil</a>
+                        </div>
+
+                        <div class="d-flex align-items-center">
+                            <p class="nombre-usuario">Nombre Usuario </p>
+                            <img src="/assets/img/placeHolder.jpg" class="imagen-perfil" alt="Imagen de Perfil" />
+                        </div>
+
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="container">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
+        </div>
+        <div>
+            <footer class="bg-dark text-light pt-5 pb-3 mt-5">
+                <div class="container">
+
+                    <div class="row text-center text-md-start">
+
+                        <div class="col-12 col-md-4 mb-4">
+                            <h5 class="text-uppercase fw-bold text-white mb-3">StockFlow</h5>
+                            <p class="text-secondary">
+                                Tu sistema de gestión de inventario rápido, seguro y eficiente. 
+                                Controlá tu stock desde cualquier lugar sin complicaciones.
+                            </p>
+                        </div>
+
+                        <div class="col-12 col-md-4 mb-4">
+                            <h5 class="text-uppercase fw-bold text-white mb-3">Accesos</h5>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="#" class="text-secondary text-decoration-none nav-foot">Home</a></li>
+                                <li class="mb-2"><a href="#" class="text-secondary text-decoration-none nav-foot">Inventario</a></li>
+                                <li class="mb-2"><a href="#" class="text-secondary text-decoration-none nav-foot">Mi Perfil</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-12 col-md-4 mb-4">
+                            <h5 class="text-uppercase fw-bold text-white mb-3">Contacto</h5>
+                            <p class="text-secondary mb-1">📍 Bahía Blanca, Buenos Aires</p>
+                            <p class="text-secondary mb-1">✉️ soporte@stockflow.com</p>
+                            <p class="text-secondary mb-1">📞 +54 11 1234-5678</p>
+                        </div>
+
+                    </div>
+
+                    <hr class="border-secondary mb-4" />
+
+                    <div class="row">
+                        <div class="col-12 text-center text-secondary">
+                            <p>
+                                © 2026 StockFlow. Todos los derechos reservados.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </footer>
         </div>
     </form>
 </body>

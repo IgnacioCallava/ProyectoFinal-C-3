@@ -1,4 +1,6 @@
-﻿body {
+﻿@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap');
+
+body {
     text-align: center;
 }
 
@@ -6,15 +8,50 @@ h1{
     margin: 30px;
 }
 
+.title1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px; /* Una línea cortita y sutil */
+    height: 4px;
+    background-color: #79838b; /* El mismo gris de tu navbar */
+    border-radius: 2px;
+}
+
+.titulo-Default {
+    font-family: 'Montserrat', sans-serif; /* O la tipografía principal que hayas elegido */
+    font-size: 2.5rem; /* Tamaño grande pero proporcionado (aprox 40px) */
+    font-weight: 700; /* Negrita para darle el peso de un título principal */
+    color: #2c3e50; /* Un tono pizarra/azul oscuro, mucho más elegante que el negro puro #000 */
+    text-align: center; /* Mantiene el centrado que ya tenés */
+    margin-top: 3rem; /* Espacio generoso arriba para que respire respecto a la navbar */
+    margin-bottom: 2.5rem; /* Espacio hacia los elementos (tarjetas) que vayan abajo */
+    letter-spacing: -0.5px; /* Junta apenitas las letras, le da un toque moderno */
+}
+
+.icono {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 700; /* Negrita para darle peso de logo */
+    color: #111827; /* Un gris muy oscuro, casi negro, para buen contraste */
+    text-decoration: none; /* Por si lo usás dentro de una etiqueta <a> */
+    letter-spacing: -0.5px; /* Juntar un poquito las letras le da un toque moderno */
+    margin: 0; /* Resetea cualquier margen por defecto que te pueda desfasar el centrado */
+}
+
 .logo{
     width: 40px;
-    height: 30px;
-
+    height: 40px;
+    border-radius: 50%;
 }
 
 .imagen-perfil {
     width: 30px;
     height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 .links{
     align-items: center;
